@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daily Goals</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+if (!sessionStorage.getItem("loggedIn")) {
+  window.location.href = "login.html";
+}
+</script>
+
+<nav>
+  <a href="index.html">Daily Goals</a>
+  <a href="streaks.html">My Streaks</a>
+  <a href="progress.html">Activity</a>
+  <a href="timeline.html">Timeline</a>
+  <a href="background.html">Background</a>
+  <a href="#" onclick="logout()">Logout</a>
+</nav>
+
+<h1>Daily Goals</h1>
+<p>Simple Habit Tracker for Students</p>
+
+<img src="illustration.png" class="hero-img">
+
+<div class="goal-box">
+  <input type="text" id="goalInput" placeholder="Enter today's goal">
+  <button onclick="addGoal()">Add Goal</button>
+</div>
+
+<ul id="goalList"></ul>
+
+<script src="script.js"></script>
+
+<script>
+function logout() {
+  sessionStorage.removeItem("loggedIn");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
